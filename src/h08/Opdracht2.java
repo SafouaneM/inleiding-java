@@ -1,11 +1,11 @@
-package h02;
+package h08;
 
 import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Echte extends Applet {
+public class Opdracht2 extends Applet {
   int man, vrouw, women,oldman, totaal;
   Button Man, ManellijkeListner;
   Button Vrouw, VrouwListner ;
