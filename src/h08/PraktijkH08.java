@@ -1,9 +1,6 @@
-package h08;
-
-import java.applet.Applet;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.applet.*;
+import java.awt.event.*;
 
 public class PraktijkH08 extends Applet {
     TextField tekstvak;
@@ -15,6 +12,7 @@ public class PraktijkH08 extends Applet {
     Button keer;
     Label label;
     double getal;
+    double getaldos;
 
     public void init() {
         tekstvak = new TextField("", 20);
@@ -46,13 +44,18 @@ public class PraktijkH08 extends Applet {
     }
 
     public void paint(Graphics g) {
-        g.drawString("Het uitkomst is " + getal, 150, 100);
         this.setSize(450, 100);
     }
 
     class plusListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+            String a = tekstvak.getText();
+            getal = Double.parseDouble(a);
+            String b = tekstvak2.getText();
+            getaldos = Double.parseDouble(b);
+            double uitkomst = getal + getaldos;
+            tekstvak.setText(String.valueOf(uitkomst));
+            tekstvak2.setText("");
             repaint();
         }
 
@@ -60,22 +63,39 @@ public class PraktijkH08 extends Applet {
 
     class minListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            String c = tekstvak.getText();
+            getal = Double.parseDouble(c);
+            String d = tekstvak2.getText();
+            getaldos = Double.parseDouble(d);
+            double uitkomst = getal - getaldos;
+            tekstvak.setText(String.valueOf(uitkomst));
+            tekstvak2.setText("");
             repaint();
         }
-
     }
-
     class delenListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            repaint();
+            String f = tekstvak.getText();
+            getal = Double.parseDouble("");
+            String g = tekstvak2.getText();
+            getaldos = Double.parseDouble("");
+            double uitkomst = getal / getaldos;
+            tekstvak.setText(String.valueOf(uitkomst));
+            tekstvak2.setText("");
         }
-
     }
 
     class keerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+            String h = tekstvak.getText();
+            getal = Double.parseDouble(h);
+            String i = tekstvak2.getText();
+            getaldos = Double.parseDouble(i);
+            double uitkomst = getal * getaldos;
+            tekstvak.setText(String.valueOf(uitkomst));
+            tekstvak2.setText("");
             repaint();
         }
     }
 }
+
